@@ -107,7 +107,7 @@
         \centering
         
         \vspace*{0.45cm}  
-        \hspace*{-1.2cm}\includegraphics{ZSTU.jpg}
+        \hspace*{-1.2cm}\includegraphics{../ZSTU.jpg}
         \vspace{35pt}
         
         % 关键：这里压缩顶部空白，让大标题立刻出现
@@ -135,7 +135,7 @@
         {\zihao{3}\bfseries \@date}
     \end{titlepage}
     
-    \includepdf{诚信声明}
+    \includepdf{../诚信声明}
     }
     % \begin{titlepage}
     %     \centering
@@ -172,8 +172,9 @@
     \renewcommand\and{, }
     \renewcommand\maketitle{
     % 期刊或书籍等，年、卷、期、页码等信息，小四宋体顶格
-    作者：\@author\par
-    出处：\@date\par
+    {\heiti\zihao{4}\raggedright 译文2\par}
+    {\raggedright 作者：\@author\par}
+    {\raggedright 出处：\@date\par}
     % 题目：四号黑体居中
     \begin{center}
         \zihao{4}\heiti \@title
@@ -267,7 +268,7 @@
 % ## 浮动体的标题
 % 图题宋体五号加粗，居中排于图的下方。
 % 表题宋体五号加粗，居中排于表的上方。
-\RequirePackage[font={small, bf}]{caption}
+\RequirePackage[font={small, bf},labelsep=space]{caption}
 \captionsetup[table]{position=top}
 \ifnum \zstucs@filecode=0
     % 图表按章编号（如图1-1），并写明图题，图表中文字用宋体小五
@@ -337,3 +338,26 @@
     % 附录小标题：小四号黑体顶格
 \fi
 
+\usepackage{listings}
+\usepackage{xcolor}
+
+% 定义Python代码样式
+\lstdefinestyle{pythoncode}{
+    language=Python,
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{blue}\bfseries,
+    stringstyle=\color{red},
+    commentstyle=\color{gray}\itshape,
+    numberstyle=\tiny\color{gray},
+    numbers=left,
+    numbersep=8pt,                   % 行号与代码之间的距离
+    showspaces=false,
+    showstringspaces=false,
+    frame=single,                    % 单线边框
+    rulecolor=\color{gray},
+    backgroundcolor=\color{gray!5},
+    tabsize=4,
+    captionpos=b,
+    breaklines=true,
+    breakatwhitespace=true
+}
